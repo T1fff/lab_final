@@ -1,0 +1,8 @@
+Nombre,Produccion,Pérdida,Sostenibilidad
+PanelSolar1,500,5,95
+TurbinaEolica1,600,4,90
+PlantaHidraulica1,800,3,85
+Subestacion1,0,2,80
+EstacionAlmacenamiento1,0,1,92
+ResidencialA,0,0,75
+ResidencialB,0,0,77

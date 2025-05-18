@@ -1,0 +1,8 @@
+,PanelSolar1,TurbinaEolica1,PlantaHidraulica1,Subestacion1,EstacionAlmacenamiento1,ResidencialA,ResidencialB
+PanelSolar1,0,1,0,1,0,0,0
+TurbinaEolica1,1,0,1,0,0,0,0
+PlantaHidraulica1,0,1,0,1,0,0,0
+Subestacion1,1,0,1,0,1,0,0
+EstacionAlmacenamiento1,0,0,0,1,0,1,1
+ResidencialA,0,0,0,0,1,0,0
+ResidencialB,0,0,0,0,1,0,0
