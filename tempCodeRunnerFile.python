@@ -1,0 +1,67 @@
+# interfaz wip
+import tkinter as tk 
+from tkinter import ttk
+from red import RedEnergia
+from PIL import Image, ImageTk
+
+class AplicacionRed:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Red de Energía Renovable")
+        self.root.geometry("1152x648")
+        self.red = RedEnergia()
+
+        self.ruta_nodos = tk.StringVar()
+        self.ruta_conexiones = tk.StringVar()
+        self.nodo_inicio = tk.StringVar()
+        self.nodo_fin = tk.StringVar()
+        self.estrategia = tk.StringVar(value="sostenibilidad")
+        
+        self.frames = {}
+        self.crear_frames()
+        self.mostrar_frames("inicio")
+        
+    def crear_frames(self):
+        frame_inicio = self.crear_frame_inicio()
+        frame_redFlujo = self.crear_frame_red()
+        
+        self.frames["inicio"] = frame_inicio
+        self.frames["Red Flujo"] = frame_redFlujo
+        
+        for frame in self.frames.values():
+            frame.place(relwidth=1, relheight=1)
+            
+    def mostrar_frames(self, nombre_frame):
+        frame = self.frames[nombre_frame]
+        frame.tkraise()
+        
+    def crear_frame_inicio(self):
+        frame = tk.Frame(self.root)
+        
+        # fondo
+        image1 = Image.open(r"C:/Users/mfrey/Downloads/image1_inicio.png")
+        fondo = ImageTk.PhotoImage(image1)
+        fondo_label = tk.Label(frame, image=fondo)
+        fondo_label.image = fondo  # mantener referencia
+        fondo_label.place(relwidth=1, relheight=1)
+        
+        boton_start = tk.Button(frame, text="Start", command=lambda: self.mostrar_frames("Red Flujo"))
+        boton_start.place(relx=0.5, rely=0.9, anchor="center")
+        
+        return frame
+    
+    def crear_frame_red(self):
+        frame = tk.Frame(self.root)
+        
+        image2 = Image.open(r"C:\Users\mfrey\Downloads\image2_red.png")
+        fondo = ImageTk.PhotoImage(image2)
+        fondo_label = tk.Label(frame, image=fondo)
+        fondo_label.image = fondo  # mantener referencia
+        fondo_label.place(relwidth=1, relheight=1)
+        
+        return frame
+    
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = AplicacionRed(root)
+    root.mainloop()  # ✅ Esto sí corre ahora
